@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import guestRoutes from './guest';
 import homeRoutes from './home';
 import loginRoutes from './login';
 import searchResume from './search-resume';
@@ -17,6 +18,6 @@ Vue.use(Router)
 export default new Router({
 	routes: [{
 		path: '/',
-		redirect: '/home'
-	}, homeRoutes, loginRoutes, searchResume, chat, talentList, resumeManager, ...jobManager, setting, ...companyDesign, ...aboutUs]
+		redirect: '/guest'
+	}, ...guestRoutes, ...homeRoutes, ...loginRoutes, ...searchResume, ...chat, ...talentList, ...resumeManager, ...jobManager, ...setting, ...companyDesign, ...aboutUs]
 })

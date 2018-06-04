@@ -1,4 +1,4 @@
-export default {
+export default [{
 	path: '/setting',
 	name: 'setting',
 	meta: {
@@ -42,4 +42,4 @@ export default {
 		component: () =>
 			import ('@/views/setting/components/account-setting'),
 	}]
-};
+}];

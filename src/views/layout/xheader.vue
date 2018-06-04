@@ -34,15 +34,15 @@
                 <div class='login_success'>
                     <flexbox align-items='center'>
                         <img class='vertical_middle' src="@imgs/home/2.png">
-                        <Avatar class='avatar' style='width: 53px;height: 53px;border-radius: 50%;' src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="large" />
+                        <Avatar class='avatar' style='width: 53px;height: 53px;border-radius: 50%;' :src="avatar" size="large" @click.native='avatarClick' />
                         <x-button type='xbtn-primary' width='153' height='40' :padding='[0,0]'>进入企业版>></x-button>
                     </flexbox>
-                    <div class='drop_down_list'>
+                    <!-- <div class='drop_down_list'>
                         <div class='item' @click='goto("/job_manager")'>职位管理</div>
                         <div class='item' @click='goto("/resume_manager")'>简历管理</div>
                         <div class='item' @click='goto("/setting")'>账户信息</div>
                         <div class='item'>退出</div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -51,6 +51,16 @@
 <script>
 export default {
     name: 'xheader',
+    data() {
+        return {
+
+        };
+    },
+    computed: {
+        avatar() {
+            return this.$store.getters.token ? require('@imgs/test.png') : require('@imgs/default.png');
+        }
+    },
     methods: {
         checkActive(name) {
             return this.$route.matched[0].name === name;
@@ -59,6 +69,16 @@ export default {
             this.$router.push({
                 path: path
             });
+        },
+        avatarClick() {
+            if (!this.$store.token) {
+                this.$store.dispatch('ShowLogin');
+            } else {
+                // 如果已经登录
+                this.$router.push({
+                    path: 'aaaa'
+                });
+            }
         }
     }
 };

@@ -1,4 +1,4 @@
-export default {
+export default [{
     path: '/home',
     name: 'home',
     component: () =>
@@ -22,4 +22,4 @@ export default {
         component: () =>
             import ('@/views/home/components/recharge'),
     }]
-};
+}];

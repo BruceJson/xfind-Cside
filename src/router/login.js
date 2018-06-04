@@ -1,4 +1,4 @@
-export default {
+export default [{
     path: '/login',
     name: 'login',
     component: () =>
@@ -22,4 +22,4 @@ export default {
         component: () =>
             import ('@/views/login/components/identify-login'),
     }]
-};
+}];

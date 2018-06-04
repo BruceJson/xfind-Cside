@@ -20,12 +20,17 @@ import '@/assets/style/main.css';
 
 import router from './router'
 
+import store from '@/store';
+
+console.log('#############store', store);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
 	el: '#app',
 	router,
+	store,
 	components: {
 		App
 	},
