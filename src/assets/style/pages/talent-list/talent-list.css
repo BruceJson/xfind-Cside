@@ -1,0 +1,90 @@
+.talent_list_page {
+	& .table_tabs {
+		height: 50px;
+		display: flex;
+		background-color: #F7F7F7;
+		&>.tab_item {
+			width: 160px;
+			line-height: 50px;
+			text-align: center;
+			background-color: #85BDFB;
+			color: #fff;
+			font-size: 16px;
+			transition: all linear .3s;
+			cursor: pointer;
+			&.active,
+			&:hover {
+				background-color: var(--mainColor);
+			}
+		}
+		&>.info_content {
+			flex: 1;
+			display: flex;
+			align-items: flex-end;
+			justify-content: flex-end;
+			padding-bottom: 7px;
+			padding-right: 25px;
+			&>.span {
+				display: block;
+				font-size: 16px;
+				&.span2 {
+					margin-left: 15px;
+					&>span {
+						font-size: 24px;
+						color: var(--mainColor);
+					}
+				}
+				&.span3 {
+					color: var(--mainColor);
+					margin-right: 45px;
+					margin-left: 20px;
+				}
+			}
+		}
+	}
+
+	& .table_list {
+		border: none;
+		&>>>.ivu-table {
+			&:before {
+				display: none;
+			}
+			&:after {
+				display: none;
+			}
+		}
+		&>>>table {
+			& th {
+				height: 50px;
+				color: #ADADAD;
+				text-align: center;
+				font-weight: normal;
+				font-size: 14px;
+				border-bottom: none;
+				background-color: #FAFAFA;
+			}
+
+			& td {
+				text-align: center;
+			}
+		}
+	}
+
+	& .action_area{
+		height: 44px;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		background-color: #F0F0F0;
+		padding-right: 53px;
+		margin-top: 15px;
+		&>>>.ivu-select-selection{
+			height: 28px;
+			&>.ivu-select-placeholder,
+			&>.ivu-select-selected-value{
+				line-height: 28px;
+				font-size: 12px;
+			}
+		}
+	}
+}

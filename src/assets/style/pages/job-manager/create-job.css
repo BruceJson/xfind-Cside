@@ -1,0 +1,106 @@
+.create_job_subtitle {
+	height: 50px;
+	line-height: 50px;
+	background-color: var(--mainColor);
+	color: #fff;
+	padding-left: 40px;
+	font-size: 18px;
+	margin-bottom: 35px;
+}
+
+.create_job_form_box {
+	display: flex;
+	justify-content: space-between;
+	&>.left {
+		width: 600px;
+	}
+	&>.right {
+		width: 445px;
+	}
+}
+
+.tag_item {
+	border: 1px dashed var(--mainColor);
+	border-style: dashed !important;
+	text-align: center;
+	height: 30px;
+	padding: 0 15px;
+	line-height: 28px;
+	overflow: visible;
+	margin-right: 15px;
+	&:after {
+		display: none;
+	}
+	&>>>.ivu-icon {
+		margin: 0 !important;
+		position: absolute;
+		right: -3px;
+		top: -8px;
+		font-size: 20px;
+		color: var(--mainColor);
+		opacity: 1;
+		font-weight: bold;
+	}
+}
+
+.work_typelist_content {
+	height: 40px;
+	width: 100%;
+	position: relative;
+	&>.work_typelist_box {
+		height: 40px;
+		width: 100%;
+		border: 1px solid #dddee1;
+		border-radius: 4px;
+		cursor: pointer;
+		padding: 0 8px;
+		position: relative;
+	}
+	&>.worktype_list {
+		width: 730px;
+		border: 1px solid #D7D7D7;
+		border-top: 4px solid var(--mainColor);
+	}
+}
+
+.create_job_page {
+	& .right {
+		display: flex;
+		&>.column_line {
+			position: relative;
+			width: 15px;
+			box-shadow: 15px 0 15px -15px inset rgba(0, 0, 0, 0.1);
+			height: 1200px;
+			&>.point {
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				border: 2px solid var(--mainColor);
+				position: absolute;
+				left: -5px;
+				top: -5px;
+				background-color: #fff;
+			}
+		}
+		&>.right_form {
+			flex: 1;
+			&>.right_form_subtitle {
+				font-size: 16px;
+				color: #333;
+				display: flex;
+				align-items: center;
+				margin-bottom: 25px;
+				&>.p2 {
+					height: 1px;
+					background-color: #E6E6E6;
+					flex: 1;
+					margin: 0 15px;
+				}
+				&>.p3 {
+					font-size: 14px;
+					color: #999;
+				}
+			}
+		}
+	}
+}

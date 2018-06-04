@@ -1,0 +1,35 @@
+.setting_page {
+	& .setting_page_inner {
+		display: flex;
+		padding-left: 30px;
+		align-items: flex-start;
+		& .tabs_box {
+			display: flex;
+			flex-direction: column;
+			width: 120px;
+			margin-right: 65px;
+			border-right: 1px solid #E7E7E7;
+			margin-top: 25px;
+			& .tab_item {
+				height: 61px;
+				border-right: 2px solid transparent;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 16px;
+				color: #777777;
+				transform: translateX(1px);
+				transition: all linear .5s;
+				&.active,
+				&:hover {
+					color: var(--mainColor);
+					border-right: 2px solid var(--mainColor);
+				}
+			}
+		}
+		& .right_part{
+			flex: 1;
+			position: relative;
+		}
+	}
+}

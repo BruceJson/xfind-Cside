@@ -1,0 +1,31 @@
+.pay_list {
+    padding-top: 33px;
+    padding-bottom: 40px;
+}
+
+.table_list {
+    border: none;
+    &>>>.ivu-table {
+        &:before {
+            display: none;
+        }
+        &:after {
+            display: none;
+        }
+    }
+    &>>>table {
+        & th {
+            height: 50px;
+            color: #ADADAD;
+            text-align: center;
+            font-weight: normal;
+            font-size: 14px;
+            border-bottom: none;
+            background-color: #FAFAFA;
+        }
+
+        & td {
+            text-align: center;
+        }
+    }
+}

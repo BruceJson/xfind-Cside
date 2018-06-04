@@ -1,0 +1,15 @@
+.platform_search_tabs{
+	& .tab_item{
+		width: 121px;
+		height: 40px;
+		border: 1px solid var(--mainColor);
+		text-align: center;
+		line-height: 38px;
+		color: var(--mainColor);
+		&.active,
+		&:hover{
+			background-color: var(--mainColor);
+			color: #fff;
+		}
+	}
+}
