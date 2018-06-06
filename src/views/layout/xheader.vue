@@ -35,7 +35,7 @@
                     <flexbox align-items='center'>
                         <img class='vertical_middle' src="@imgs/home/2.png">
                         <Avatar class='avatar' style='width: 53px;height: 53px;border-radius: 50%;' :src="avatar" size="large" @click.native='avatarClick' />
-                        <x-button type='xbtn-primary' width='153' height='40' :padding='[0,0]'>进入企业版>></x-button>
+                        <x-button v-show='!$store.getters.token' type='xbtn-primary' width='153' height='40' :padding='[0,0]'>进入企业版>></x-button>
                     </flexbox>
                     <!-- <div class='drop_down_list'>
                         <div class='item' @click='goto("/job_manager")'>职位管理</div>

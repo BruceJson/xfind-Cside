@@ -16,14 +16,14 @@
 			<x-link class='a1' to='' :color='colorVariables.commonFontColor2' :show-arrow='true'>忘记密码？</x-link>
 		</flexbox>
 		<div class='line line5'>
-			<x-button class='xbtn_bradius btn_login' fontsize='14' color='#fff' width='100%' @click.native='xalert'>登录</x-button>
+			<x-button class='xbtn_bradius btn_login' fontsize='14' color='#fff' width='100%' @click.native='loginClick'>登录</x-button>
 		</div>
 		<flexbox class='line line6' align-items='center'>
 			<p>快速登录</p>
 			<img src="@imgs/login/5.png">
 			<img src="@imgs/login/6.png">
 			<flex-item :full='true'></flex-item>
-			<x-link class='a1' to='' :show-arrow='true'  @click.native='goLogin'>验证码登录</x-link>
+			<x-link class='a1' to='' :show-arrow='true' @click.native='goLogin'>验证码登录</x-link>
 		</flexbox>
 	</div>
 </template>
@@ -44,8 +44,12 @@ export default {
 		goLogin() {
 			this.$emit('on-goto', '2');
 		},
-		xalert() {
-			alert(1);
+		loginClick() {
+			this.$store.dispatch('Login').then(() => {
+				this.$router.push({
+					path: '/home'
+				});
+			});
 		}
 	}
 };

@@ -1,25 +1,17 @@
 export default [{
-    path: '/home',
-    name: 'home',
-    component: () =>
-        import ('@/views/home/home'),
-    children: [{
-        path: '',
-        redirect: 'info'
-    }, {
-        path: 'info',
-        name: 'info',
-        component: () =>
-            import ('@/views/home/components/info-content'),
-    }, {
-        path: 'paylist',
-        name: 'paylist',
-        component: () =>
-            import ('@/views/home/components/pay-list'),
-    }, {
-        path: 'recharge',
-        name: 'recharge',
-        component: () =>
-            import ('@/views/home/components/recharge'),
-    }]
+	path: '/home',
+	name: 'home',
+	meta: {
+		title: '首页'
+	},
+	component: () =>
+		import ('@/views/home/home')
+}, {
+	path: '/edit_resume',
+	name: 'edit_resume',
+	meta: {
+		title: '简历编辑'
+	},
+	component: () =>
+		import ('@/views/home/edit-resume')
 }];

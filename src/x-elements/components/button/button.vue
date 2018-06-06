@@ -1,5 +1,5 @@
 <template>
-	<button :style="styles" @click='btnClick' :class="[type==='xbtn-primary' ? 'xbtn xbtn_fill xbtn_bradius': type==='xbtn-border-primary' ? 'xbtn xbtn_border xbtn_bradius' : '']">
+	<button type='button' :style="styles" @click='btnClick' :class="[type==='xbtn-primary' ? 'xbtn xbtn_fill xbtn_bradius': type==='xbtn-border-primary' ? 'xbtn xbtn_border xbtn_bradius' : '']">
 		<slot></slot>
 	</button>
 </template>

@@ -12,7 +12,7 @@ export default {
 		}
 	},
 	actions: {
-		Login({ commit }) {
+		async Login({ commit }) {
 			commit('SET_TOKEN', '123123213213123');
 		},
 		ShowLogin({ commit }) {

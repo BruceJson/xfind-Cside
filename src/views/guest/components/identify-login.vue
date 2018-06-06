@@ -68,9 +68,6 @@ export default {
 				];
 			}
 			console.log(this.identifyCode);
-		},
-		xalert() {
-			alert(1);
 		}
 	}
 };
