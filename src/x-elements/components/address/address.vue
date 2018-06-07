@@ -12,9 +12,18 @@ export default {
     },
     data() {
         return {
-            value1: [],
             data: addressData
         };
+    },
+    computed: {
+        value1: {
+            set(val) {
+                this.$emit('input', val)
+            },
+            get() {
+                return this.value;
+            }
+        }
     },
     methods: {
         renderFormat(label) {
