@@ -71,12 +71,12 @@ export default {
             });
         },
         avatarClick() {
-            if (!this.$store.token) {
+            if (!this.$store.getters.token) {
                 this.$store.dispatch('ShowLogin');
             } else {
                 // 如果已经登录
                 this.$router.push({
-                    path: 'aaaa'
+                    path: '/setting'
                 });
             }
         }

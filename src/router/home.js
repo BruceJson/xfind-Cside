@@ -14,4 +14,20 @@ export default [{
 	},
 	component: () =>
 		import ('@/views/home/edit-resume')
+}, {
+	path: '/my_delivery',
+	name: 'my_delivery',
+	meta: {
+		title: '我的投递'
+	},
+	component: () =>
+		import ('@/views/home/my-delivery')
+}, {
+	path: '/my_favor',
+	name: 'my_favor',
+	meta: {
+		title: '我的收藏'
+	},
+	component: () =>
+		import ('@/views/home/my-favor')
 }];

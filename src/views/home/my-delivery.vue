@@ -1,74 +1,56 @@
 <template>
-	<div class='email_list'>
-		<Table stripe class='table_list' :columns="tableData.columns" :data="tableData.data"></Table>
-		<div class='action_area'>
-			<x-button class='xbtn xbtn_fill' width='65' height='28' fontsize='12' :padding='[0, 0]' style='margin-left: 40px;'>删除用户</x-button>
-			<x-button class='xbtn xbtn_fill' width='65' height='28' fontsize='12' :padding='[0, 0]' style='margin-left: 40px;' @click.native='createUser'>新增用户</x-button>
+	<div class='my_delivery_page'>
+		<div class='content_inner_width'>
+			<Breadcrumb class='breadcrumbs' separator=">">
+				<BreadcrumbItem to='/'>我的主页</BreadcrumbItem>
+				<BreadcrumbItem v-for='(item, index) in $route.matched' :key='index' :to="item.path">{{item.meta.title || ''}}</BreadcrumbItem>
+			</Breadcrumb>
+			<tab class='table_tabs' v-model='curIndex'>
+				<tab-item class='tab_item' tab-index='0'>全部投递</tab-item>
+				<tab-item class='tab_item' tab-index='1'>未被查看</tab-item>
+				<tab-item class='tab_item' tab-index='2'>被查看</tab-item>
+				<tab-item class='tab_item' tab-index='3'>感兴趣</tab-item>
+				<tab-item class='tab_item' tab-index='4'>不感兴趣</tab-item>
+			</tab>
+			<Table stripe class='table_list' :columns="tableData.columns" :data="tableData.data"></Table>
+			<Page class='align_center margin_top_30 margin_bottom_40' :total="100"></Page>
 		</div>
-		<Page class='align_center margin_top_30 margin_bottom_40' :total="100"></Page>
 	</div>
 </template>
 <script>
 export default {
-	name: 'user-manager',
+	name: 'resume-manager',
 	data() {
-		var self = this;
 		return {
-			formData: {
-				time: '',
-				workname: '',
-			},
+			curIndex: '0',
+			curPage: 1,
+			totalPage: 10,
 			tableData: {
 				columns: [{
-					type: 'selection',
-					width: 60,
-					align: 'center'
-				}, {
-					title: '用户名',
+					title: '职位名称',
 					key: 'index'
 				}, {
-					title: '创建时间',
+					title: '公司名称',
 					key: 'index'
 				}, {
-					title: '用户属性',
+					title: '时间',
 					key: 'index'
 				}, {
-					title: '职位管理',
-					key: 'index'
-				}, {
-					title: '简历管理',
-					key: 'index'
-				}, {
-					title: '企业人才库',
-					key: 'index'
-				}, {
-					title: '消息',
-					key: 'index'
-				}, {
-					title: '收藏夹',
-					key: 'index'
-				}, {
-					title: '账户信息',
-					key: 'index'
-				}, {
-					title: '操作',
+					title: '薪资',
 					key: 'index',
-					render(h, params) {
+					render: (h, obj) => {
 						return h('span', {
 							style: {
-								color: '#01467E',
-								cursor: 'pointer'
+								color: '#FF7676'
 							},
 							domProps: {
-								innerHTML: '编辑'
-							},
-							on: {
-								click(){
-									alert(1);
-								}
+								innerHTML: obj.row.index
 							}
 						});
 					}
+				}, {
+					title: '状态',
+					key: 'index'
 				}],
 				data: [{
 					index: '2',
@@ -144,17 +126,21 @@ export default {
 			}
 		};
 	},
-	methods: {
-		createUser(){
-			this.$router.push({
-				path: './create_user'
-			});
+	computed: {
+		currentComp() {
+			if (this.curIndex === '0') {
+				return GetResume;
+			} else if (this.curIndex === '1') {
+				return DownloadResume;
+			} else {
+				return CollectionResume;
+			}
 		}
 	}
 };
 
 </script>
 <style scoped>
-@import '@pages/setting/company-info.css';
+
 
 </style>

@@ -71,6 +71,7 @@
             &>.item {
                 display: flex;
                 align-items: center;
+                cursor: pointer;
                 &>.span1 {
                     font-size: 14px;
                     color: #999;

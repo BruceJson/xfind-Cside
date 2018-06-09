@@ -2,7 +2,7 @@
 	& .table_tabs {
 		height: 50px;
 		display: flex;
-		background-color: #F7F7F7;
+		background-color: #85BDFB;
 		&>.tab_item {
 			width: 160px;
 			line-height: 50px;

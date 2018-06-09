@@ -19,7 +19,7 @@
 				<div class='children'>
 					<!-- <div class='children_item' v-for='(child, index1) in item.children' @click='addWorkType(child)'>{{child.name}}</div> -->
 
-					<work-type-item v-for='(child, index1) in item.children' :work-type='child' @on-select='workTypeSelect'></work-type-item>
+					<work-type-item v-for='(child, index1) in item.children' :key="index" :work-type='child' @on-select='workTypeSelect'></work-type-item>
 				</div>
 			</div>
 		</div>

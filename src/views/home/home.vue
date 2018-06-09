@@ -5,7 +5,7 @@
                 <no-resume></no-resume>
                 <has-resume></has-resume>
                 <div class='part1'>
-                    <div class='item'>
+                    <div class='item' @click='$router.push({path: "/my_delivery"})'>
                         <img src="@imgs/home/3.png" alt="">
                         <span class='span1'>我的投递</span>
                         <span class='span2'>0</span>
@@ -15,7 +15,7 @@
                         <span class='span1'>谁看过我</span>
                         <span class='span2'>0</span>
                     </div>
-                    <div class='item'>
+                    <div class='item' @click='$router.push({path: "/my_favor"})'>
                         <img src="@imgs/home/5.png" alt="">
                         <span class='span1'>我的收藏</span>
                         <span class='span2'>0</span>
