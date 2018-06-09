@@ -1,19 +1,17 @@
 <template>
     <div class='content_list_box'>
-        <div class='title'>
-            <p>工作经验</p>
-            <span style='color: #b8b8b8;cursor: pointer;' @click='editClick'>+添加</span>
-        </div>
         <div class='content_list'>
-            <workexps-detail-info v-for='(item,index) in details' :key='index' @delete='deleteDetail(index)'></workexps-detail-info>
+            <educationexps-detail-info v-for='(item,index) in details' :key='index' @delete='deleteDetail(index)'></educationexps-detail-info>
         </div>
     </div>
 </template>
 <script>
-import WorkexpsDetailInfo from './detail-info';
+import EducationexpsDetailInfo from './detail-info';
 export default {
-    name: 'workexps-defail-info-list',
-    components: {WorkexpsDetailInfo},
+    name: 'projectexps-defail-info-list',
+    components: {
+        EducationexpsDetailInfo
+    },
     props: {
         details: {
             type: Array,
@@ -26,7 +24,7 @@ export default {
         editClick() {
             this.$emit('edit');
         },
-        deleteDetail(index){
+        deleteDetail(index) {
             this.$emit('delete', index);
         }
     }

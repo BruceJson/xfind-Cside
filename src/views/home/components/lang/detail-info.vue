@@ -3,15 +3,9 @@
         <div class='content_box' v-show='!editMode'>
             <flexbox>
                 <div class='left'>
-                    <div class='l1' style='margin-bottom: 15px;'>
-                        <span style='color: #a1a1a1;margin-right: 30px;'>2015.9~2017.6</span>
-                        <span style='color: #333333;margin-right: 30px;'>德尔斐网络科技有限公司</span>
-                        <span style='color: #333333;'>UI设计（全职）</span>
-                    </div>
-                    <div class='l2' style='color: #333333;margin-bottom: 15px;'>互联网/电子商务|150~500人|民营公司|产品研发部|职位月薪：15000~25000元/月</div>
                     <flexbox class='l3' style='margin-bottom: 15px;'>
-                        <span style='color: #a1a1a1;margin-right: 30px;width:60px;'>工作描述</span>
-                        <span style='color: #333333;flex: 1;'>工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述</span>
+                        <span style='color: #a1a1a1;margin-right: 30px;'>2017</span>
+                        <span style='color: #333333;flex: 1;'>英语四级</span>
                     </flexbox>
                 </div>
                 <flexbox class='right' style='padding-right: 15px;'>
@@ -21,16 +15,16 @@
             </flexbox>
         </div>
 
-        <workexps-edit-info v-show='editMode' @on-submit='expSubmit'></workexps-edit-info>
+        <lang-edit-info v-show='editMode' @on-submit='expSubmit'></lang-edit-info>
     </div>
 
 </template>
 <script>
-import WorkexpsEditInfo from './edit-info';
+import LangEditInfo from './edit-info';
 export default {
-    name: 'workexps-defail-info',
+    name: 'Certificate-defail-info',
     components: {
-        WorkexpsEditInfo
+        LangEditInfo
     },
     props: {
         detail: {
