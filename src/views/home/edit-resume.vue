@@ -22,31 +22,31 @@
 					<div class='part_list'>
 						<a class='item' href='#position'>
 							<span>基本信息</span>
-							<img src="@imgs/home/7.png" alt="">
+							<img :src='baseInfo.detail ? activeImg:emptyImg' alt="">
 						</a>
 						<div class='item'>
 							<span>求职意向</span>
-							<img src="@imgs/home/7.png" alt="">
+							<img :src='careerMind.detail ? activeImg:emptyImg' alt="">
 						</div>
 						<div class='item'>
 							<span>工作经验</span>
-							<img src="@imgs/home/7.png" alt="">
+							<img :src='wordExps.details.length>0 ? activeImg:emptyImg' alt="">
 						</div>
 						<div class='item'>
 							<span>项目经历</span>
-							<img src="@imgs/home/7.png" alt="">
+							<img :src='projectExps.details.length>0 ? activeImg:emptyImg' alt="">
 						</div>
 						<div class='item'>
 							<span>教育经历</span>
-							<img src="@imgs/home/7.png" alt="">
+							<img :src='educationExps.details.length>0 ? activeImg:emptyImg' alt="">
 						</div>
 						<div class='item'>
-							<span>培训技能</span>
-							<img src="@imgs/home/7.png" alt="">
+							<span>证书培训</span>
+							<img :src='training.details.length === 0 && certificate.details.length === 0 && lang.details.length === 0  ? emptyImg : activeImg' alt="">
 						</div>
 						<div class='item'>
 							<span>附加信息</span>
-							<img src="@imgs/home/7.png" alt="">
+							<img :src='other.details.length === 0 && enclosure.details.length === 0 ? emptyImg : activeImg' alt="">
 						</div>
 					</div>
 				</div>
@@ -279,6 +279,8 @@ export default {
 	},
 	data() {
 		return {
+			activeImg: require('@imgs/home/7.png'),
+			emptyImg: require('@imgs/home/8.png'),
 			// 个人信息
 			userData: {
 				detail: null,
@@ -324,7 +326,7 @@ export default {
 				details: [],
 				editMode: false
 			},
-			// 语言
+			// 其他
 			other: {
 				details: [],
 				editMode: false
